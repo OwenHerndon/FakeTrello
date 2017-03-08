@@ -8,6 +8,7 @@ namespace FakeTrello.ReverseModels
 {
     public class AspNetRoles
     {
+        //key
         [Key]
         [MaxLength(128)]
         public string Id { get; set; }
