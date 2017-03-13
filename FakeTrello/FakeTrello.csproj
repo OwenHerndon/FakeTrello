@@ -181,13 +181,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\FakeTrelloContext.cs" />
+    <Compile Include="DAL\FakeTrelloRepository.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703070032569_InitialCreate.cs" />
-    <Compile Include="Migrations\201703070032569_InitialCreate.Designer.cs">
-      <DependentUpon>201703070032569_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201703132326367_InitialCreate.cs" />
+    <Compile Include="Migrations\201703132326367_InitialCreate.Designer.cs">
+      <DependentUpon>201703132326367_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -271,8 +272,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703070032569_InitialCreate.resx">
-      <DependentUpon>201703070032569_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703132326367_InitialCreate.resx">
+      <DependentUpon>201703132326367_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

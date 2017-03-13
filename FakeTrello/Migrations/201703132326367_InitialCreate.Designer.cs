@@ -13,7 +13,7 @@ namespace FakeTrello.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201703070032569_InitialCreate"; }
+            get { return "201703132326367_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source
