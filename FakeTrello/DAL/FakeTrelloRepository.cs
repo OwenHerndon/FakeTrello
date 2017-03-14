@@ -118,7 +118,15 @@ namespace FakeTrello.DAL
 
         public bool RemoveBoard(int boardId)
         {
-            throw new NotImplementedException();
+            //return Context.Boards.Where(b => b.Owner.Id == userId).ToList();
+            Board found_board = GetBoard(boardId);
+            if (found_board != null)
+            {
+                Context.Boards.Remove(found_board);
+                Context.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public bool RemoveCard(int cardId)

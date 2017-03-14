@@ -43,6 +43,7 @@ namespace FakeTrello.Tests.DAL
             mock_boards_set.As<IQueryable<Board>>().Setup(b => b.GetEnumerator()).Returns(() => query_boards.GetEnumerator());
 
             mock_boards_set.Setup(b => b.Add(It.IsAny<Board>())).Callback((Board board) => fake_board_table.Add(board));
+            mock_boards_set.Setup(b => b.Remove(It.IsAny<Board>())).Callback((Board board) => fake_board_table.Remove(board));
             fake_context.Setup(c => c.Boards).Returns(mock_boards_set.Object); // Context.Boards returns fake_board_table (a list)
         }
 
@@ -155,7 +156,7 @@ namespace FakeTrello.Tests.DAL
             int actual_board_count = repo.Context.Boards.Count();
 
             //Assert
-
+            Assert.AreEqual(expected_board_count, actual_board_count);
         }
     }
 }
