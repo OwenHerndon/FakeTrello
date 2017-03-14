@@ -78,7 +78,7 @@ namespace FakeTrello.DAL
 
         public List<Board> GetBoardsFromUser(string userId)
         {
-            throw new NotImplementedException();
+            return Context.Boards.Where(b => b.Owner.Id == userId).ToList();
         }
 
         public Card GetCard(int cardId)
