@@ -43,7 +43,13 @@ namespace FakeTrello.Tests.DAL
             mock_boards_set.As<IQueryable<Board>>().Setup(b => b.GetEnumerator()).Returns(() => query_boards.GetEnumerator());
 
             mock_boards_set.Setup(b => b.Add(It.IsAny<Board>())).Callback((Board board) => fake_board_table.Add(board));
+<<<<<<< HEAD
             mock_boards_set.Setup(b => b.Remove(It.IsAny<Board>())).Callback((Board board) => fake_board_table.Remove(board));
+=======
+
+            mock_boards_set.Setup(b => b.Remove(It.IsAny<Board>())).Callback((Board board) => fake_board_table.Remove(board));
+
+>>>>>>> 57f686c655c09b86338c56ca29ddda875d5f6386
             fake_context.Setup(c => c.Boards).Returns(mock_boards_set.Object); // Context.Boards returns fake_board_table (a list)
         }
 
@@ -126,12 +132,17 @@ namespace FakeTrello.Tests.DAL
         [TestMethod]
         public void EnsureICanGetUserBoards()
         {
+<<<<<<< HEAD
             //Arrange
+=======
+            // Arrange
+>>>>>>> 57f686c655c09b86338c56ca29ddda875d5f6386
             fake_board_table.Add(new Board { BoardId = 1, Name = "My Board", Owner = sally });
             fake_board_table.Add(new Board { BoardId = 2, Name = "My Board", Owner = sally });
             fake_board_table.Add(new Board { BoardId = 3, Name = "My Board", Owner = sammy });
             CreateFakeDatabase();
 
+<<<<<<< HEAD
             //Act
             int expected_board_count = 2;
             int actual_board_count = repo.GetBoardsFromUser(sally.Id).Count;
@@ -139,24 +150,46 @@ namespace FakeTrello.Tests.DAL
             //Assert
             Assert.AreEqual(expected_board_count, actual_board_count);
         
+=======
+            // Act
+            int expected_board_count = 2;
+            int actual_board_count = repo.GetBoardsFromUser(sally.Id).Count;
+
+            // Assert
+            Assert.AreEqual(expected_board_count, actual_board_count);
+>>>>>>> 57f686c655c09b86338c56ca29ddda875d5f6386
         }
 
         [TestMethod]
         public void EnsureICanRemoveBoard()
         {
+<<<<<<< HEAD
             //Arrange
+=======
+            // Arrange
+>>>>>>> 57f686c655c09b86338c56ca29ddda875d5f6386
             fake_board_table.Add(new Board { BoardId = 1, Name = "My Board", Owner = sally });
             fake_board_table.Add(new Board { BoardId = 2, Name = "My Board", Owner = sally });
             fake_board_table.Add(new Board { BoardId = 3, Name = "My Board", Owner = sammy });
             CreateFakeDatabase();
 
+<<<<<<< HEAD
             //Act
+=======
+            // Act
+>>>>>>> 57f686c655c09b86338c56ca29ddda875d5f6386
             int expected_board_count = 2;
             repo.RemoveBoard(3);
             int actual_board_count = repo.Context.Boards.Count();
 
+<<<<<<< HEAD
             //Assert
             Assert.AreEqual(expected_board_count, actual_board_count);
+=======
+            // Assert
+            Assert.AreEqual(expected_board_count, actual_board_count);
+
+>>>>>>> 57f686c655c09b86338c56ca29ddda875d5f6386
         }
     }
 }

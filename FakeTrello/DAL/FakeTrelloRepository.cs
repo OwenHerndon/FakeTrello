@@ -118,7 +118,10 @@ namespace FakeTrello.DAL
 
         public bool RemoveBoard(int boardId)
         {
+<<<<<<< HEAD
             //return Context.Boards.Where(b => b.Owner.Id == userId).ToList();
+=======
+>>>>>>> 57f686c655c09b86338c56ca29ddda875d5f6386
             Board found_board = GetBoard(boardId);
             if (found_board != null)
             {
@@ -127,6 +130,10 @@ namespace FakeTrello.DAL
                 return true;
             }
             return false;
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 57f686c655c09b86338c56ca29ddda875d5f6386
         }
 
         public bool RemoveCard(int cardId)
