@@ -138,5 +138,16 @@ namespace FakeTrello.DAL
         {
             throw new NotImplementedException();
         }
+
+        public void EditBoardName(int boardId, string newname)
+        {
+            Board found_board = GetBoard(boardId);
+            if (found_board != null)
+            {
+                found_board.Name = newname; //git add
+                Context.SaveChanges(); //git commit
+            }
+            //false posititve: SaveChanges is missing
+        }
     }
 }
